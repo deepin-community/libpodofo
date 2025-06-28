@@ -1,0 +1,5 @@
+tools/podofoimpose/plans usr/share/doc/libpodofo-utils/examples/podofoimpose
+tools/podofoimpose/sample.pdf usr/share/doc/libpodofo-utils/examples/podofoimpose
+tools/podofoimpose/sample.plan usr/share/doc/libpodofo-utils/examples/podofoimpose
+usr/bin/*
+usr/share/man/

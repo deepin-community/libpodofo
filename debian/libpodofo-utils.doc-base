@@ -1,0 +1,7 @@
+Document: libpodofo-utils
+Title: Documentation for the libpodofo library
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/libpodofo-utils/README.html
+Files: /usr/share/doc/libpodofo-utils/*.html

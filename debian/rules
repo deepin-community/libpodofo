@@ -1,4 +1,19 @@
 #!/usr/bin/make -f
 
+export DH_VERBOSE=1
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
 %:
 	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	    -DCMAKE_BUILD_RPATH_USE_ORIGIN=ON \
+	    -DWANT_FONTCONFIG:BOOL=TRUE \
+	    -DWANT_BOOST:BOOL=1 \
+	    -DPODOFO_BUILD_SHARED:BOOL=TRUE \
+	    -DPODOFO_BUILD_STATIC:BOOL=FALSE \
+	    -DPODOFO_USE_VISIBILITY:BOOL=TRUE \
+
+override_dh_compress:
+	dh_compress -X .pdf -X .plan

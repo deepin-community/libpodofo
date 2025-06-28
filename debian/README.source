@@ -1,0 +1,6 @@
+This source has been repacked to remove a non-free piece of code.
+See https://sourceforge.net/p/podofo/tickets/1 for more information, and
+commit d3296f5496f5f9b03727642e9bd0cbfc22c33875 in the packaging repository
+to see the changes that have been made.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Tue, 01 May 2018 19:04:53 +0200
