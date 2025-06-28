@@ -1,0 +1,6 @@
+# Some symbols change across all architectures; maintaining symbols in this
+# condition is extremely painful, so let's not do it.
+# Furthermore, there is no real need as every upstream releases changes ABI
+# forcing a transition, a symbol file wouldn't make it much easier at all.
+no-symbols-control-file
+libpodofo0.9.8t64: package-name-doesnt-match-sonames libpodofo0.9.8

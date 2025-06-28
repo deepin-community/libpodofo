@@ -1,15 +1,78 @@
-Source: template-repository
-Section: unknown
+Source: libpodofo
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Section: libdevel
+Maintainer: Mattia Rizzolo <mattia@debian.org>
+Build-Depends: dpkg-dev (>= 1.22.5),
+ cmake,
+ debhelper-compat (= 13),
+ libboost-dev,
+ libcppunit-dev,
+ libfontconfig1-dev,
+ libfreetype6-dev,
+ libidn-dev,
+ libjpeg-dev,
+ liblua5.1-0-dev,
+ libssl-dev,
+ libtiff-dev,
+ libunistring-dev,
+ zlib1g-dev,
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
+Homepage: http://podofo.sourceforge.net
+Vcs-Git: https://salsa.debian.org/debian/libpodofo.git
+Vcs-Browser: https://salsa.debian.org/debian/libpodofo
 
-Package: template-repository
+Package: libpodofo-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends:
+ libboost-dev,
+ libpodofo0.9.8t64 (= ${binary:Version}),
+ libssl-dev,
+ ${misc:Depends},
+Description: PoDoFo development files
+ The PoDoFo library is a free, portable C++ library which includes classes to
+ parse PDF files and modify their contents into memory. The changes can be
+ written back to disk easily. The parser can also be used to extract
+ information from a PDF file (for example the parser could be used in a PDF
+ viewer). Besides parsing PoDoFo includes also very simple classes to create
+ your own PDF files. All classes are documented so it is easy to start writing
+ your own application using PoDoFo.
+ .
+ This package contains the header development files used for building
+ PoDoFo-enabled applications.
+
+Package: libpodofo-utils
+Architecture: any
+Section: utils
+Depends:
+ libpodofo0.9.8t64 (= ${binary:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: PoDoFo utilities
+ The PoDoFo library is a free, portable C++ library which includes classes to
+ parse PDF files and modify their contents into memory. The changes can be
+ written back to disk easily. The parser can also be used to extract
+ information from a PDF file (for example the parser could be used in a PDF
+ viewer). Besides parsing PoDoFo includes also very simple classes to create
+ your own PDF files. All classes are documented so it is easy to start writing
+ your own application using PoDoFo.
+ .
+ This package contains tools for working with PDF files.
+
+Package: libpodofo0.9.8t64
+Provides: ${t64:Provides}
+Replaces: libpodofo0.9.8
+Breaks: libpodofo0.9.8 (<< ${source:Version})
+Section: libs
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: PoDoFo - library to work with the PDF file format
+ The PoDoFo library is a free, portable C++ library which includes classes to
+ parse PDF files and modify their contents into memory. The changes can be
+ written back to disk easily. The parser can also be used to extract
+ information from a PDF file (for example the parser could be used in a PDF
+ viewer). Besides parsing PoDoFo includes also very simple classes to create
+ your own PDF files. All classes are documented so it is easy to start writing
+ your own application using PoDoFo.

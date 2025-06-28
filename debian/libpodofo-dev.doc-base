@@ -1,0 +1,7 @@
+Document: libpodofo-dev
+Title: Documentation for the libpodofo library
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/libpodofo-dev/README.html
+Files: /usr/share/doc/libpodofo-dev/*.html
